@@ -213,13 +213,13 @@ class Player(pygame.sprite.Sprite):
     def __init__(self, laser_group):
         """Initialize the player"""
         super().__init__()
-        self.image = pygame.transform.scale(pygame.image.load("Ship_01/Ship_lVL_1.png").convert(), (64, 64))
+        self.image = pygame.transform.scale(pygame.image.load("Ship_01/Ship_lVL_1.png").convert_alpha(), (64, 64))
         self.image_index = 0
         self.animation_list = []
         for i in range (0,9):
-            img = pygame.transform.scale(pygame.image.load(f"Ship_01/Exhaust/Exhaust_1_1_00{i}.png").convert(), (64,64))
+            img = pygame.transform.scale(pygame.image.load(f"Ship_01/Exhaust/Exhaust_1_1_00{i}.png").convert_alpha(), (64,64))
             self.animation_list.append(img)
-            img = pygame.transform.scale(pygame.image.load(f"Ship_01/Exhaust/Exhaust_1_2_00{i}.png").convert(),
+            img = pygame.transform.scale(pygame.image.load(f"Ship_01/Exhaust/Exhaust_1_2_00{i}.png").convert_alpha(),
                                          (64, 64))
             self.animation_list.append(img)
         self.rect = self.image.get_rect()
